@@ -28,15 +28,25 @@ function printScreen()
         out += "<tr>";
         for(var x = 0; x < maps[currentMap][y].length; x++)
         {
-            out += "<td>" + maps[currentMap][y] [x] + "</td>";
+            if(maps[currentMap][y] [x] == "c")
+            {
+                out += "<td id='char'>" + maps[currentMap][y] [x] + "</td>";
+            }
+            else if(maps[currentMap][y] [x] == "x")
+            {
+                out += "<td id='block'>" + maps[currentMap][y] [x] + "</td>";
+            }
+            else
+            {
+                out += "<td>" + maps[currentMap][y] [x] + "</td>";
+            }
+            console.log(out);
         }
         out += "</tr>";
     }
     out += "</table>";
     var stats = "Lives: "+ lives;
     document.getElementById("screen").innerHTML = out;
-
-
 }
 
 var currentMap = "level1";
@@ -80,8 +90,6 @@ function bone(input)
         }
     }
 }
-
-bone();
 
 function getPos()
 {
@@ -203,3 +211,5 @@ function moveRight()
     }
     printScreen();
 }
+
+printScreen();
