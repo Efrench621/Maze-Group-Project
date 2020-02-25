@@ -1,15 +1,14 @@
 var maps = {
-    Inn:[
+    1:[
         ["_","_","_","_","1","_","_","_","_"],
         ["_","_","_","_","_","_","_","_","_"],
         ["_","_","_","_","I","_","_","_","_"],
         ["_","_","_","_","_","_","_","_","_"],
         ["_","_","_","_","c","_","_","_","_"],
         ["_","_","_","_","_","_","_","_","_"],
-        ["_","_","_","_","_","_","_","_","_"],
-        0
+        ["_","_","_","_","_","_","_","_","_"]
     ],
-    Outside:[
+    2:[
         ["_","_","_","_","x","x","x","_","_","_"],
         ["_","_","_","_","x","1","x","_","_","_"],
         ["_","_","_","_","x","c","x","_","_","_"],
@@ -17,12 +16,47 @@ var maps = {
         ["_","_","_","_","_","_","_","_","_","_"],
         ["x","x","_","_","_","_","_","_","_","_"],
         ["x","2","_","_","_","_","_","_","_","_"],
-        ["x","x","_","_","_","_","_","_","_","_"],
-        0
+        ["x","x","_","_","_","_","_","_","_","_"]
     ]
 }
 
 var currentMap = "Inn";
+var lives = 3;
+
+function specificKey(event)
+{
+    var keyPressed = event.key;
+    return keyPressed;
+}
+
+function reset();
+
+function bone(input)
+{
+    if(stateMSBM == 0)//movement
+    {
+        if(input=="w"||input=="W")
+        {
+            moveUp();
+        }
+        else if(input=="a"||input=="A")
+        {
+            moveLeft();
+        }
+        else if(input=="s"||input=="S")
+        {
+            moveDown();
+        }
+        else if(input=="d"||input=="D")
+        {
+            moveRight();
+        }
+        else if(input == "r" || input == "R" && lives == 0)//menu button
+        {
+            reset();
+        }
+    }
+}
 
 function getPos()
 {
@@ -51,26 +85,9 @@ function moveUp()
         if(maps[currentMap][pos.Y-1] [pos.X] == "_"){
             maps[currentMap][pos.Y] [pos.X] = "_";
             maps[currentMap][pos.Y-1] [pos.X] = "c";
-            if(Math.random() <= maps[currentMap][maps[currentMap].length-1])
-            {
-                stateMSBM = 2;
-                printAction("You are Attacted by Monsters!");
-            }
-        }
-        else if(maps[currentMap][pos.Y-1] [pos.X] == "I"){
-            stateMSBM = 1;
-            printAction("what do you want to buy?");
-            printAction(storeList);
         }
         else if(maps[currentMap][pos.Y-1] [pos.X] == "1"){
-            if(currentMap == "Inn")
-            {
-                currentMap = "Outside";
-            }
-            else if(currentMap == "Outside")
-            {
-                currentMap = "Inn";
-            }
+            currentMap++;
         }
     }
     catch(err){
@@ -84,11 +101,6 @@ function moveDown()
         if(maps[currentMap][pos.Y+1] [pos.X] == "_"){
             maps[currentMap][pos.Y] [pos.X] = "_";
             maps[currentMap][pos.Y+1] [pos.X] = "c";
-            if(Math.random() <= maps[currentMap][maps[currentMap].length-1])
-            {
-                stateMSBM = 2;
-                printAction("You are Attacted by Monsters!");
-            }
         }
         else if(maps[currentMap][pos.Y+1] [pos.X] == "I"){
             stateMSBM = 1;
@@ -117,11 +129,6 @@ function moveLeft()
         if(maps[currentMap][pos.Y] [pos.X-1] == "_"){
             maps[currentMap][pos.Y] [pos.X] = "_";
             maps[currentMap][pos.Y] [pos.X-1] = "c";
-            if(Math.random() <= maps[currentMap][maps[currentMap].length-1])
-            {
-                stateMSBM = 2;
-                printAction("You are Attacted by Monsters!");
-            }
         }
         else if(maps[currentMap][pos.Y] [pos.X-1] == "I"){
             stateMSBM = 1;
@@ -150,11 +157,6 @@ function moveRight()
         if(maps[currentMap][pos.Y] [pos.X+1] == "_"){
             maps[currentMap][pos.Y] [pos.X] = "_";
             maps[currentMap][pos.Y] [pos.X+1] = "c";
-            if(Math.random() <= maps[currentMap][maps[currentMap].length-1])
-            {
-                stateMSBM = 2;
-                printAction("You are Attacted by Monsters!");
-            }
         }
         else if(maps[currentMap][pos.Y] [pos.X+1] == "I"){
             stateMSBM = 1;
