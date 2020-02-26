@@ -17,6 +17,16 @@ var maps = {
         ["x","x","_","_","_","_","_","_","_","_"],
         ["x","2","_","_","_","_","_","_","_","_"],
         ["x","x","_","_","_","_","_","_","_","_"]
+    ],
+    level3:[
+        ["_","_","_","_","x","x","x","_","_","_"],
+        ["_","_","_","_","x","1","x","_","_","_"],
+        ["_","_","_","_","x","c","x","_","_","_"],
+        ["_","_","_","_","_","_","_","_","_","_"],
+        ["_","_","_","_","_","_","_","_","_","_"],
+        ["x","x","_","_","_","_","_","_","_","_"],
+        ["x","2","_","_","_","_","_","_","_","_"],
+        ["x","x","_","_","_","_","_","_","_","_"]
     ]
 }
 
@@ -50,6 +60,7 @@ function printScreen()
 }
 
 var currentMap = "level1";
+var level = 1;
 var ifDead = false;
 var lives = 3;
 
@@ -120,7 +131,8 @@ function moveUp()
             maps[currentMap][pos.Y-1] [pos.X] = "c";
         }
         else if(maps[currentMap][pos.Y-1] [pos.X] == "1"){
-            currentMap++;
+            level++;
+            currentMap = "level"+level;
         }
     }
     catch(err){
@@ -141,14 +153,8 @@ function moveDown()
             printAction(storeList);
         }
         else if(maps[currentMap][pos.Y+1] [pos.X] == "1"){
-            if(currentMap == "level1")
-            {
-                currentMap = "level2";
-            }
-            else if(currentMap == "level2")
-            {
-                currentMap = "level1";
-            }
+            level++;
+            currentMap = "level"+level;
         }
     }
     catch(err) {
@@ -169,14 +175,8 @@ function moveLeft()
             printAction(storeList);
         }
         else if(maps[currentMap][pos.Y] [pos.X-1] == "1"){
-            if(currentMap == "level1")
-            {
-                currentMap = "level2";
-            }
-            else if(currentMap == "level2")
-            {
-                currentMap = "level1";
-            }
+            level++;
+            currentMap = "level"+level;
         }
     }
     catch(err) {
@@ -197,14 +197,8 @@ function moveRight()
             printAction(storeList);
         }
         else if(maps[currentMap][pos.Y] [pos.X+1] == "1"){
-            if(currentMap == "level1")
-            {
-                currentMap = "level2";
-            }
-            else if(currentMap == "level2")
-            {
-                currentMap = "level1";
-            }
+            level++;
+            currentMap = "level"+level;
         }
     }
     catch(err) {
