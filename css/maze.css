@@ -1,2 +1,19 @@
 /*comment*/
+.block{
+    table-layout: auto;
+    padding: 20px;
+    text-align: center;
+    background-color: azure;
+}
 
+td{
+    padding: 30px;
+    background-color: burlywood;
+}
+
+
+table{     
+    border-collapse: collapse;
+    border-spacing: 0px;
+    border: darkblue 4px solid;
+}
