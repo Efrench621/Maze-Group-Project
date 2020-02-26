@@ -1,32 +1,61 @@
 var maps = { // All levels for the maze stored in arrays
     level1:[
         ["_","_","_","_","1","_","_","_","_"],
-        ["_","_","_","_","_","_","_","_","_"],
-        ["_","_","_","_","I","_","_","_","_"],
+        ["_","_","_","_","s","_","_","_","_"],
+        ["_","s","_","_","_","_","_","_","_"],
+        ["_","s","_","_","2","_","_","s","_"],
         ["_","_","_","_","_","_","_","_","_"],
         ["_","_","_","_","c","_","_","_","_"],
-        ["_","_","_","_","_","_","_","_","_"],
         ["_","_","_","_","_","_","_","_","_"]
     ],
     level2:[
-        ["_","_","_","_","x","x","x","_","_","_"],
-        ["_","_","_","_","x","1","x","_","_","_"],
-        ["_","_","_","_","x","c","x","_","_","_"],
-        ["_","_","_","_","_","_","_","_","_","_"],
-        ["_","_","_","_","_","_","_","_","_","_"],
-        ["x","x","_","_","_","_","_","_","_","_"],
-        ["x","2","_","_","_","_","_","_","_","_"],
-        ["x","x","_","_","_","_","_","_","_","_"]
+        ["_","_","_","_","x","x","x","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
+        ["_","_","_","_","x","c","x","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
+        ["_","_","_","_","x","_","x","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
+        ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
+        ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
+        ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
+        ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
+        ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
+        ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
+        ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","e","_","_","_","_","_"],
+        ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
+        ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
+        ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
+        ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
+        ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
+        ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
+        ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","1"]
     ],
     level3:[
         ["_","_","_","_","x","x","x","_","_","_"],
-        ["_","_","_","_","x","1","x","_","_","_"],
-        ["_","_","_","_","x","c","x","_","_","_"],
+        ["_","_","_","_","x","_","x","_","_","_"],
+        ["_","_","_","_","x","_","x","_","_","_"],
         ["_","_","_","_","_","_","_","_","_","_"],
         ["_","_","_","_","_","_","_","_","_","_"],
         ["x","x","_","_","_","_","_","_","_","_"],
-        ["x","2","_","_","_","_","_","_","_","_"],
-        ["x","x","_","_","_","_","_","_","_","_"]
+        ["x","c","_","_","_","_","_","_","_","_"],
+        ["x","x","_","_","_","_","_","_","_","1"]
+    ],
+    level4:[
+        ["_","_","_","_","x","x","x","_","_","_"],
+        ["_","_","_","_","x","_","x","_","_","_"],
+        ["_","_","_","_","x","_","x","_","_","_"],
+        ["_","_","_","_","_","_","_","_","_","_"],
+        ["_","_","_","_","_","_","_","_","_","_"],
+        ["x","x","_","_","_","_","_","_","_","_"],
+        ["x","c","_","_","_","_","_","_","_","_"],
+        ["x","x","_","_","_","_","_","_","_","1"]
+    ],
+    level5:[
+        ["_","_","_","_","x","x","x","_","_","_"],
+        ["_","_","_","_","x","_","x","_","_","_"],
+        ["_","_","_","_","x","_","x","_","_","_"],
+        ["_","_","_","_","_","_","_","_","_","_"],
+        ["_","_","_","_","_","_","_","_","_","_"],
+        ["x","x","_","_","_","_","_","_","_","_"],
+        ["x","c","_","_","_","_","_","_","_","_"],
+        ["x","x","_","_","_","_","_","_","_","1"]
     ]
 }
 
@@ -44,25 +73,40 @@ function printScreen() // Function that creates the table, sets ids to the <td> 
             }
             else if(maps[currentMap][y] [x] == "x")
             {
-                out += "<td id='block'>" + maps[currentMap][y] [x] + "</td>";
+                out += "<td class='block'>" + maps[currentMap][y] [x] + "</td>";
+            }
+            else if(maps[currentMap][y] [x] == "2")
+            {
+                out += "<td class='coin'>" + maps[currentMap][y] [x] + "</td>";
+            }
+            else if(maps[currentMap][y] [x] == "s")
+            {
+                out += "<td class='station'>" + maps[currentMap][y] [x] + "</td>";
+            }
+            else if(maps[currentMap][y] [x] == "e")
+            {
+                out += "<td class='motion'>" + maps[currentMap][y] [x] + "</td>";
             }
             else
             {
                 out += "<td>" + maps[currentMap][y] [x] + "</td>";
             }
-            console.log(out);
         }
         out += "</tr>";
     }
     out += "</table>";
-    var stats = "Lives: "+ lives;
+    var stats = "Lives: "+ lives + "<br> Score:" + coins;
     document.getElementById("screen").innerHTML = out;
+    document.getElementById("lives").innerHTML = stats;
 }
 
+var resetMaps = maps;
 var currentMap = "level1";
 var level = 1;
-var ifDead = false;
+var isDead = false;
 var lives = 3;
+var coins = 0;
+var isOnTrap = false;
 
 function specificKey(event) // Checks if key is pressed
 {
@@ -70,35 +114,44 @@ function specificKey(event) // Checks if key is pressed
     return keyPressed;
 }
 
-function reset()
+function resetMapFunc()
 {
-
+    maps = resetMaps;
+    lives = 3;
+    level = 0;
+    return(true);
 }
 
 function bone(input)
 {
-    if(ifDead == false)//movement
+    //movement
+    if(input=="w"||input=="W")
     {
-        if(input=="w"||input=="W")
-        {
-            moveUp();
-        }
-        else if(input=="a"||input=="A")
-        {
-            moveLeft();
-        }
-        else if(input=="s"||input=="S")
-        {
-            moveDown();
-        }
-        else if(input=="d"||input=="D")
-        {
-            moveRight();
-        }
-        else if(input == "r" || input == "R" && lives == 0)//menu button
-        {
-            reset();
-        }
+        moveUp();
+    }
+    else if(input=="a"||input=="A")
+    {
+        moveLeft();
+    }
+    else if(input=="s"||input=="S")
+    {
+        moveDown();
+    }
+    else if(input=="d"||input=="D")
+    {
+        moveRight();
+    }
+    else if(input == "r" && lives == 0)//menu button
+    {
+        resetMapFunc();
+    }
+    if(isDead)
+    {
+        resetMapFunc();
+    }
+    if (lives<=0)
+    {
+        isDead = true;
     }
 }
 
@@ -127,12 +180,51 @@ function moveUp()
     var pos = getPos();
     try{
         if(maps[currentMap][pos.Y-1] [pos.X] == "_"){
-            maps[currentMap][pos.Y] [pos.X] = "_";
-            maps[currentMap][pos.Y-1] [pos.X] = "c";
+            if(isOnTrap)
+            {
+                maps[currentMap][pos.Y] [pos.X] = "s";
+                maps[currentMap][pos.Y-1] [pos.X] = "c";
+                isOnTrap = false;
+            }
+            else
+            {
+                maps[currentMap][pos.Y] [pos.X] = "_";
+                maps[currentMap][pos.Y-1] [pos.X] = "c";
+            }
         }
         else if(maps[currentMap][pos.Y-1] [pos.X] == "1"){
             level++;
             currentMap = "level"+level;
+        }
+        else if(maps[currentMap][pos.Y-1] [pos.X] == "s"){
+            lives--;
+            if(isOnTrap)
+            {
+                maps[currentMap][pos.Y] [pos.X] = "s";
+                maps[currentMap][pos.Y-1] [pos.X] = "c";
+                isOnTrap = false;
+            }
+            else
+            {
+                maps[currentMap][pos.Y] [pos.X] = "_";
+                maps[currentMap][pos.Y-1] [pos.X] = "c";
+            }
+            isOnTrap = true;
+        }
+        else if(maps[currentMap][pos.Y-1] [pos.X] == "2")
+        {
+            coins += 100;
+            if(isOnTrap)
+            {
+                maps[currentMap][pos.Y] [pos.X] = "s";
+                maps[currentMap][pos.Y-1] [pos.X] = "c";
+                isOnTrap = false;
+            }
+            else
+            {
+                maps[currentMap][pos.Y] [pos.X] = "_";
+                maps[currentMap][pos.Y-1] [pos.X] = "c";
+            }
         }
     }
     catch(err){
@@ -144,17 +236,50 @@ function moveDown()
     var pos = getPos();
     try {
         if(maps[currentMap][pos.Y+1] [pos.X] == "_"){
-            maps[currentMap][pos.Y] [pos.X] = "_";
-            maps[currentMap][pos.Y+1] [pos.X] = "c";
-        }
-        else if(maps[currentMap][pos.Y+1] [pos.X] == "I"){
-            stateMSBM = 1;
-            printAction("what do you want to buy?");
-            printAction(storeList);
+            if(isOnTrap)
+            {
+                maps[currentMap][pos.Y] [pos.X] = "s";
+                maps[currentMap][pos.Y+1] [pos.X] = "c";
+                isOnTrap = false;
+            }
+            else
+            {
+                maps[currentMap][pos.Y] [pos.X] = "_";
+                maps[currentMap][pos.Y+1] [pos.X] = "c";
+            }
         }
         else if(maps[currentMap][pos.Y+1] [pos.X] == "1"){
             level++;
             currentMap = "level"+level;
+        }
+        else if(maps[currentMap][pos.Y+1] [pos.X] == "s"){
+            lives--;
+            if(isOnTrap)
+            {
+                maps[currentMap][pos.Y] [pos.X] = "s";
+                maps[currentMap][pos.Y+1] [pos.X] = "c";
+                isOnTrap = false;
+            }
+            else
+            {
+                maps[currentMap][pos.Y] [pos.X] = "_";
+                maps[currentMap][pos.Y+1] [pos.X] = "c";
+            }
+            isOnTrap = true;
+        }
+        else if(maps[currentMap][pos.Y+1] [pos.X] == "2"){
+            coins += 100;
+            if(isOnTrap)
+            {
+                maps[currentMap][pos.Y] [pos.X] = "s";
+                maps[currentMap][pos.Y+1] [pos.X] = "c";
+                isOnTrap = false;
+            }
+            else
+            {
+                maps[currentMap][pos.Y] [pos.X] = "_";
+                maps[currentMap][pos.Y+1] [pos.X] = "c";
+            }
         }
     }
     catch(err) {
@@ -166,17 +291,50 @@ function moveLeft()
     var pos = getPos();
     try {
         if(maps[currentMap][pos.Y] [pos.X-1] == "_"){
-            maps[currentMap][pos.Y] [pos.X] = "_";
-            maps[currentMap][pos.Y] [pos.X-1] = "c";
-        }
-        else if(maps[currentMap][pos.Y] [pos.X-1] == "I"){
-            stateMSBM = 1;
-            printAction("what do you want to buy?");
-            printAction(storeList);
+            if(isOnTrap)
+            {
+                maps[currentMap][pos.Y] [pos.X] = "s";
+                maps[currentMap][pos.Y] [pos.X-1] = "c";
+                isOnTrap = false;
+            }
+            else
+            {
+                maps[currentMap][pos.Y] [pos.X] = "_";
+                maps[currentMap][pos.Y] [pos.X-1] = "c";
+            }
         }
         else if(maps[currentMap][pos.Y] [pos.X-1] == "1"){
             level++;
             currentMap = "level"+level;
+        }
+        else if(maps[currentMap][pos.Y] [pos.X-1] == "s"){
+            lives--;
+            if(isOnTrap)
+            {
+                maps[currentMap][pos.Y] [pos.X] = "s";
+                maps[currentMap][pos.Y] [pos.X-1] = "c";
+                isOnTrap = false;
+            }
+            else
+            {
+                maps[currentMap][pos.Y] [pos.X] = "_";
+                maps[currentMap][pos.Y] [pos.X-1] = "c";
+            }
+            isOnTrap = true;
+        }
+        else if(maps[currentMap][pos.Y] [pos.X-1] == "2"){
+            coins += 100;
+            if(isOnTrap)
+            {
+                maps[currentMap][pos.Y] [pos.X] = "s";
+                maps[currentMap][pos.Y] [pos.X-1] = "c";
+                isOnTrap = false;
+            }
+            else
+            {
+                maps[currentMap][pos.Y] [pos.X] = "_";
+                maps[currentMap][pos.Y] [pos.X-1] = "c";
+            }
         }
     }
     catch(err) {
@@ -188,17 +346,50 @@ function moveRight()
     var pos = getPos();
     try {
         if(maps[currentMap][pos.Y] [pos.X+1] == "_"){
-            maps[currentMap][pos.Y] [pos.X] = "_";
-            maps[currentMap][pos.Y] [pos.X+1] = "c";
-        }
-        else if(maps[currentMap][pos.Y] [pos.X+1] == "I"){
-            stateMSBM = 1;
-            printAction("what do you want to buy?");
-            printAction(storeList);
+            if(isOnTrap)
+            {
+                maps[currentMap][pos.Y] [pos.X] = "s";
+                maps[currentMap][pos.Y] [pos.X+1] = "c";
+                isOnTrap = false;
+            }
+            else
+            {
+                maps[currentMap][pos.Y] [pos.X] = "_";
+                maps[currentMap][pos.Y] [pos.X+1] = "c";
+            }
         }
         else if(maps[currentMap][pos.Y] [pos.X+1] == "1"){
             level++;
             currentMap = "level"+level;
+        }
+        else if(maps[currentMap][pos.Y] [pos.X+1] == "s"){
+            lives--;
+            if(isOnTrap)
+            {
+                maps[currentMap][pos.Y] [pos.X] = "s";
+                maps[currentMap][pos.Y] [pos.X+1] = "c";
+                isOnTrap = false;
+            }
+            else
+            {
+                maps[currentMap][pos.Y] [pos.X] = "_";
+                maps[currentMap][pos.Y] [pos.X+1] = "c";
+            }
+            isOnTrap = true;
+        }
+        else if(maps[currentMap][pos.Y] [pos.X+1] == "2"){
+            coins += 100;
+            if(isOnTrap)
+            {
+                maps[currentMap][pos.Y] [pos.X] = "s";
+                maps[currentMap][pos.Y] [pos.X+1] = "c";
+                isOnTrap = false;
+            }
+            else
+            {
+                maps[currentMap][pos.Y] [pos.X] = "_";
+                maps[currentMap][pos.Y] [pos.X+1] = "c";
+            }
         }
     }
     catch(err) {
