@@ -1,4 +1,4 @@
-var maps = {
+var maps = { // All levels for the maze stored in arrays
     level1:[
         ["_","_","_","_","1","_","_","_","_"],
         ["_","_","_","_","_","_","_","_","_"],
@@ -30,7 +30,7 @@ var maps = {
     ]
 }
 
-function printScreen()
+function printScreen() // Function that creates the table, sets ids to the <td> tags, and prints lives
 {
     var out = "<table>";
     for(var y = 0; y < maps[currentMap].length; y++ )
@@ -64,7 +64,7 @@ var level = 1;
 var ifDead = false;
 var lives = 3;
 
-function specificKey(event)
+function specificKey(event) // Checks if key is pressed
 {
     var keyPressed = event.key;
     return keyPressed;
