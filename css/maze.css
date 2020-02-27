@@ -1,13 +1,16 @@
 /*comment*/
+body{
+    text-align: center;
+}
 .block{
     table-layout: auto;
     padding: 20px;
     text-align: center;
-    background-color: azure;
+    background-color: black;
 }
 
 td{
-    padding: 30px;
+    padding: 20px;
     background-color: burlywood;
 }
 
@@ -16,4 +19,12 @@ table{
     border-collapse: collapse;
     border-spacing: 0px;
     border: darkblue 4px solid;
+    margin: 20px;
+}
+#lives{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 200%;
+    color: slateblue;
 }

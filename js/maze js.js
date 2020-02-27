@@ -84,7 +84,7 @@ function printScreen() // Function that creates the table, sets ids to the <td> 
             }
             else if(mapData[currentMap][y] [x] == "2")
             {
-                out += "<td class='coin'>" + mapData[currentMap][y] [x] + "</td>";
+                out += "<td class='coin'>" + "<img src='images/small coin.png'>" + "</td>";
             }
             else if(mapData[currentMap][y] [x] == "s")
             {
@@ -390,5 +390,7 @@ function moveRight()
     }
     printScreen();
 }
+
+
 
 printScreen();
