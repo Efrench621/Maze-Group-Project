@@ -1,4 +1,4 @@
-var maps = { // All levels for the maze stored in arrays
+var mapData = { // All levels for the maze stored in arrays
     level1:[
         ["_","_","_","_","1","_","_","_","_"],
         ["_","_","_","_","s","_","_","_","_"],
@@ -13,7 +13,7 @@ var maps = { // All levels for the maze stored in arrays
         ["_","_","_","_","x","c","x","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
         ["_","_","_","_","x","_","x","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
         ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
-        ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
+        ["_","_","_","_","_","s","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
         ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
         ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
         ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
@@ -59,37 +59,44 @@ var maps = { // All levels for the maze stored in arrays
     ]
 }
 
+var currentMap = "level1";
+var level = 1;
+var isDead = false;
+var lives = 3;
+var coins = 0;
+var isOnTrap = false;
+
 function printScreen() // Function that creates the table, sets ids to the <td> tags, and prints lives
 {
     var out = "<table>";
-    for(var y = 0; y < maps[currentMap].length; y++ )
+    for(var y = 0; y < mapData[currentMap].length; y++ )
     {
         out += "<tr>";
-        for(var x = 0; x < maps[currentMap][y].length; x++)
+        for(var x = 0; x < mapData[currentMap][y].length; x++)
         {
-            if(maps[currentMap][y] [x] == "c")
+            if(mapData[currentMap][y] [x] == "c")
             {
-                out += "<td id='char'>" + maps[currentMap][y] [x] + "</td>";
+                out += "<td id='char'>" + mapData[currentMap][y] [x] + "</td>";
             }
-            else if(maps[currentMap][y] [x] == "x")
+            else if(mapData[currentMap][y] [x] == "x")
             {
-                out += "<td class='block'>" + maps[currentMap][y] [x] + "</td>";
+                out += "<td class='block'>" + mapData[currentMap][y] [x] + "</td>";
             }
-            else if(maps[currentMap][y] [x] == "2")
+            else if(mapData[currentMap][y] [x] == "2")
             {
-                out += "<td class='coin'>" + maps[currentMap][y] [x] + "</td>";
+                out += "<td class='coin'>" + mapData[currentMap][y] [x] + "</td>";
             }
-            else if(maps[currentMap][y] [x] == "s")
+            else if(mapData[currentMap][y] [x] == "s")
             {
-                out += "<td class='station'>" + maps[currentMap][y] [x] + "</td>";
+                out += "<td class='station'>" + mapData[currentMap][y] [x] + "</td>";
             }
-            else if(maps[currentMap][y] [x] == "e")
+            else if(mapData[currentMap][y] [x] == "e")
             {
-                out += "<td class='motion'>" + maps[currentMap][y] [x] + "</td>";
+                out += "<td class='motion'>" + mapData[currentMap][y] [x] + "</td>";
             }
             else
             {
-                out += "<td>" + maps[currentMap][y] [x] + "</td>";
+                out += "<td>" + mapData[currentMap][y] [x] + "</td>";
             }
         }
         out += "</tr>";
@@ -100,13 +107,7 @@ function printScreen() // Function that creates the table, sets ids to the <td> 
     document.getElementById("lives").innerHTML = stats;
 }
 
-var resetMaps = maps;
-var currentMap = "level1";
-var level = 1;
-var isDead = false;
-var lives = 3;
-var coins = 0;
-var isOnTrap = false;
+
 
 function specificKey(event) // Checks if key is pressed
 {
@@ -116,10 +117,7 @@ function specificKey(event) // Checks if key is pressed
 
 function resetMapFunc()
 {
-    maps = resetMaps;
-    lives = 3;
-    level = 0;
-    return(true);
+    location.reload();
 }
 
 function bone(input)
@@ -141,10 +139,6 @@ function bone(input)
     {
         moveRight();
     }
-    else if(input == "r" && lives == 0)//menu button
-    {
-        resetMapFunc();
-    }
     if(isDead)
     {
         resetMapFunc();
@@ -155,17 +149,17 @@ function bone(input)
     }
 }
 
-function getPos()
+function getPos(input)
 {
     var pos = {
         Y:0,
         X:0
     };
-    for(var y = 0; y<maps[currentMap].length; y++)
+    for(var y = 0; y<mapData[currentMap].length; y++)
     {
-        for(var x = 0; x<maps[currentMap][y].length; x++)
+        for(var x = 0; x<mapData[currentMap][y].length; x++)
         {
-            if(maps[currentMap][y] [x] == "c")
+            if(mapData[currentMap][y] [x] == input)
             {
                 pos.Y = y;
                 pos.X = x;
@@ -177,53 +171,53 @@ function getPos()
 
 function moveUp()
 {
-    var pos = getPos();
+    var pos = getPos("c");
     try{
-        if(maps[currentMap][pos.Y-1] [pos.X] == "_"){
+        if(mapData[currentMap][pos.Y-1] [pos.X] == "_"){
             if(isOnTrap)
             {
-                maps[currentMap][pos.Y] [pos.X] = "s";
-                maps[currentMap][pos.Y-1] [pos.X] = "c";
+                mapData[currentMap][pos.Y] [pos.X] = "s";
+                mapData[currentMap][pos.Y-1] [pos.X] = "c";
                 isOnTrap = false;
             }
             else
             {
-                maps[currentMap][pos.Y] [pos.X] = "_";
-                maps[currentMap][pos.Y-1] [pos.X] = "c";
+                mapData[currentMap][pos.Y] [pos.X] = "_";
+                mapData[currentMap][pos.Y-1] [pos.X] = "c";
             }
         }
-        else if(maps[currentMap][pos.Y-1] [pos.X] == "1"){
+        else if(mapData[currentMap][pos.Y-1] [pos.X] == "1"){
             level++;
             currentMap = "level"+level;
         }
-        else if(maps[currentMap][pos.Y-1] [pos.X] == "s"){
+        else if(mapData[currentMap][pos.Y-1] [pos.X] == "s"){
             lives--;
             if(isOnTrap)
             {
-                maps[currentMap][pos.Y] [pos.X] = "s";
-                maps[currentMap][pos.Y-1] [pos.X] = "c";
+                mapData[currentMap][pos.Y] [pos.X] = "s";
+                mapData[currentMap][pos.Y-1] [pos.X] = "c";
                 isOnTrap = false;
             }
             else
             {
-                maps[currentMap][pos.Y] [pos.X] = "_";
-                maps[currentMap][pos.Y-1] [pos.X] = "c";
+                mapData[currentMap][pos.Y] [pos.X] = "_";
+                mapData[currentMap][pos.Y-1] [pos.X] = "c";
             }
             isOnTrap = true;
         }
-        else if(maps[currentMap][pos.Y-1] [pos.X] == "2")
+        else if(mapData[currentMap][pos.Y-1] [pos.X] == "2")
         {
             coins += 100;
             if(isOnTrap)
             {
-                maps[currentMap][pos.Y] [pos.X] = "s";
-                maps[currentMap][pos.Y-1] [pos.X] = "c";
+                mapData[currentMap][pos.Y] [pos.X] = "s";
+                mapData[currentMap][pos.Y-1] [pos.X] = "c";
                 isOnTrap = false;
             }
             else
             {
-                maps[currentMap][pos.Y] [pos.X] = "_";
-                maps[currentMap][pos.Y-1] [pos.X] = "c";
+                mapData[currentMap][pos.Y] [pos.X] = "_";
+                mapData[currentMap][pos.Y-1] [pos.X] = "c";
             }
         }
     }
@@ -233,52 +227,52 @@ function moveUp()
 }
 function moveDown()
 {
-    var pos = getPos();
+    var pos = getPos("c");
     try {
-        if(maps[currentMap][pos.Y+1] [pos.X] == "_"){
+        if(mapData[currentMap][pos.Y+1] [pos.X] == "_"){
             if(isOnTrap)
             {
-                maps[currentMap][pos.Y] [pos.X] = "s";
-                maps[currentMap][pos.Y+1] [pos.X] = "c";
+                mapData[currentMap][pos.Y] [pos.X] = "s";
+                mapData[currentMap][pos.Y+1] [pos.X] = "c";
                 isOnTrap = false;
             }
             else
             {
-                maps[currentMap][pos.Y] [pos.X] = "_";
-                maps[currentMap][pos.Y+1] [pos.X] = "c";
+                mapData[currentMap][pos.Y] [pos.X] = "_";
+                mapData[currentMap][pos.Y+1] [pos.X] = "c";
             }
         }
-        else if(maps[currentMap][pos.Y+1] [pos.X] == "1"){
+        else if(mapData[currentMap][pos.Y+1] [pos.X] == "1"){
             level++;
             currentMap = "level"+level;
         }
-        else if(maps[currentMap][pos.Y+1] [pos.X] == "s"){
+        else if(mapData[currentMap][pos.Y+1] [pos.X] == "s"){
             lives--;
             if(isOnTrap)
             {
-                maps[currentMap][pos.Y] [pos.X] = "s";
-                maps[currentMap][pos.Y+1] [pos.X] = "c";
+                mapData[currentMap][pos.Y] [pos.X] = "s";
+                mapData[currentMap][pos.Y+1] [pos.X] = "c";
                 isOnTrap = false;
             }
             else
             {
-                maps[currentMap][pos.Y] [pos.X] = "_";
-                maps[currentMap][pos.Y+1] [pos.X] = "c";
+                mapData[currentMap][pos.Y] [pos.X] = "_";
+                mapData[currentMap][pos.Y+1] [pos.X] = "c";
             }
             isOnTrap = true;
         }
-        else if(maps[currentMap][pos.Y+1] [pos.X] == "2"){
+        else if(mapData[currentMap][pos.Y+1] [pos.X] == "2"){
             coins += 100;
             if(isOnTrap)
             {
-                maps[currentMap][pos.Y] [pos.X] = "s";
-                maps[currentMap][pos.Y+1] [pos.X] = "c";
+                mapData[currentMap][pos.Y] [pos.X] = "s";
+                mapData[currentMap][pos.Y+1] [pos.X] = "c";
                 isOnTrap = false;
             }
             else
             {
-                maps[currentMap][pos.Y] [pos.X] = "_";
-                maps[currentMap][pos.Y+1] [pos.X] = "c";
+                mapData[currentMap][pos.Y] [pos.X] = "_";
+                mapData[currentMap][pos.Y+1] [pos.X] = "c";
             }
         }
     }
@@ -288,52 +282,52 @@ function moveDown()
 }
 function moveLeft()
 {
-    var pos = getPos();
+    var pos = getPos("c");
     try {
-        if(maps[currentMap][pos.Y] [pos.X-1] == "_"){
+        if(mapData[currentMap][pos.Y] [pos.X-1] == "_"){
             if(isOnTrap)
             {
-                maps[currentMap][pos.Y] [pos.X] = "s";
-                maps[currentMap][pos.Y] [pos.X-1] = "c";
+                mapData[currentMap][pos.Y] [pos.X] = "s";
+                mapData[currentMap][pos.Y] [pos.X-1] = "c";
                 isOnTrap = false;
             }
             else
             {
-                maps[currentMap][pos.Y] [pos.X] = "_";
-                maps[currentMap][pos.Y] [pos.X-1] = "c";
+                mapData[currentMap][pos.Y] [pos.X] = "_";
+                mapData[currentMap][pos.Y] [pos.X-1] = "c";
             }
         }
-        else if(maps[currentMap][pos.Y] [pos.X-1] == "1"){
+        else if(mapData[currentMap][pos.Y] [pos.X-1] == "1"){
             level++;
             currentMap = "level"+level;
         }
-        else if(maps[currentMap][pos.Y] [pos.X-1] == "s"){
+        else if(mapData[currentMap][pos.Y] [pos.X-1] == "s"){
             lives--;
             if(isOnTrap)
             {
-                maps[currentMap][pos.Y] [pos.X] = "s";
-                maps[currentMap][pos.Y] [pos.X-1] = "c";
+                mapData[currentMap][pos.Y] [pos.X] = "s";
+                mapData[currentMap][pos.Y] [pos.X-1] = "c";
                 isOnTrap = false;
             }
             else
             {
-                maps[currentMap][pos.Y] [pos.X] = "_";
-                maps[currentMap][pos.Y] [pos.X-1] = "c";
+                mapData[currentMap][pos.Y] [pos.X] = "_";
+                mapData[currentMap][pos.Y] [pos.X-1] = "c";
             }
             isOnTrap = true;
         }
-        else if(maps[currentMap][pos.Y] [pos.X-1] == "2"){
+        else if(mapData[currentMap][pos.Y] [pos.X-1] == "2"){
             coins += 100;
             if(isOnTrap)
             {
-                maps[currentMap][pos.Y] [pos.X] = "s";
-                maps[currentMap][pos.Y] [pos.X-1] = "c";
+                mapData[currentMap][pos.Y] [pos.X] = "s";
+                mapData[currentMap][pos.Y] [pos.X-1] = "c";
                 isOnTrap = false;
             }
             else
             {
-                maps[currentMap][pos.Y] [pos.X] = "_";
-                maps[currentMap][pos.Y] [pos.X-1] = "c";
+                mapData[currentMap][pos.Y] [pos.X] = "_";
+                mapData[currentMap][pos.Y] [pos.X-1] = "c";
             }
         }
     }
@@ -343,52 +337,52 @@ function moveLeft()
 }
 function moveRight()
 {
-    var pos = getPos();
+    var pos = getPos("c");
     try {
-        if(maps[currentMap][pos.Y] [pos.X+1] == "_"){
+        if(mapData[currentMap][pos.Y] [pos.X+1] == "_"){
             if(isOnTrap)
             {
-                maps[currentMap][pos.Y] [pos.X] = "s";
-                maps[currentMap][pos.Y] [pos.X+1] = "c";
+                mapData[currentMap][pos.Y] [pos.X] = "s";
+                mapData[currentMap][pos.Y] [pos.X+1] = "c";
                 isOnTrap = false;
             }
             else
             {
-                maps[currentMap][pos.Y] [pos.X] = "_";
-                maps[currentMap][pos.Y] [pos.X+1] = "c";
+                mapData[currentMap][pos.Y] [pos.X] = "_";
+                mapData[currentMap][pos.Y] [pos.X+1] = "c";
             }
         }
-        else if(maps[currentMap][pos.Y] [pos.X+1] == "1"){
+        else if(mapData[currentMap][pos.Y] [pos.X+1] == "1"){
             level++;
             currentMap = "level"+level;
         }
-        else if(maps[currentMap][pos.Y] [pos.X+1] == "s"){
+        else if(mapData[currentMap][pos.Y] [pos.X+1] == "s"){
             lives--;
             if(isOnTrap)
             {
-                maps[currentMap][pos.Y] [pos.X] = "s";
-                maps[currentMap][pos.Y] [pos.X+1] = "c";
+                mapData[currentMap][pos.Y] [pos.X] = "s";
+                mapData[currentMap][pos.Y] [pos.X+1] = "c";
                 isOnTrap = false;
             }
             else
             {
-                maps[currentMap][pos.Y] [pos.X] = "_";
-                maps[currentMap][pos.Y] [pos.X+1] = "c";
+                mapData[currentMap][pos.Y] [pos.X] = "_";
+                mapData[currentMap][pos.Y] [pos.X+1] = "c";
             }
             isOnTrap = true;
         }
-        else if(maps[currentMap][pos.Y] [pos.X+1] == "2"){
+        else if(mapData[currentMap][pos.Y] [pos.X+1] == "2"){
             coins += 100;
             if(isOnTrap)
             {
-                maps[currentMap][pos.Y] [pos.X] = "s";
-                maps[currentMap][pos.Y] [pos.X+1] = "c";
+                mapData[currentMap][pos.Y] [pos.X] = "s";
+                mapData[currentMap][pos.Y] [pos.X+1] = "c";
                 isOnTrap = false;
             }
             else
             {
-                maps[currentMap][pos.Y] [pos.X] = "_";
-                maps[currentMap][pos.Y] [pos.X+1] = "c";
+                mapData[currentMap][pos.Y] [pos.X] = "_";
+                mapData[currentMap][pos.Y] [pos.X+1] = "c";
             }
         }
     }
