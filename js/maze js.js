@@ -147,6 +147,7 @@ function bone(input)
     {
         isDead = true;
     }
+    enemyAi();
 }
 
 function getPos(input)
@@ -385,12 +386,96 @@ function moveRight()
                 mapData[currentMap][pos.Y] [pos.X+1] = "c";
             }
         }
+        
     }
     catch(err) {
     }
     printScreen();
 }
 
+function rand(min,max){
+    while(true){
+        var out = ((Math.random()*max)+(Math.random()*min));
+        if(min<out){
+            if(max>out){
+                return(out);
+            }
+        }
+    }
+}
 
+
+
+function enemyAi(){
+    var pos = getPos("e");
+    var nomber = Math.round(rand(1,4));
+    try
+    {    
+        if(nomber == 1){
+            if(mapData[currentMap][pos.Y-1] [pos.X] == "_"){
+                if(isOnTrap)
+                {
+                    mapData[currentMap][pos.Y] [pos.X] = "s";
+                    mapData[currentMap][pos.Y-1] [pos.X] = "e";
+                    isOnTrap = false;
+                }
+                else
+                {
+                    mapData[currentMap][pos.Y] [pos.X] = "_";
+                    mapData[currentMap][pos.Y-1] [pos.X] = "e";
+                }
+            }
+        }
+        else if(nomber == 2){
+            if(mapData[currentMap][pos.Y+1] [pos.X] == "_"){
+                if(isOnTrap)
+                {
+                    mapData[currentMap][pos.Y] [pos.X] = "s";
+                    mapData[currentMap][pos.Y+1] [pos.X] = "e";
+                    isOnTrap = false;
+                }
+                else
+                {
+                    mapData[currentMap][pos.Y] [pos.X] = "_";
+                    mapData[currentMap][pos.Y+1] [pos.X] = "e";
+                }
+            }
+        }
+        else if(nomber == 3){
+            if(mapData[currentMap][pos.Y] [pos.X-1] == "_"){
+                if(isOnTrap)
+                {
+                    mapData[currentMap][pos.Y] [pos.X] = "s";
+                    mapData[currentMap][pos.Y] [pos.X-1] = "e";
+                    isOnTrap = false;
+                }
+                else
+                {
+                    mapData[currentMap][pos.Y] [pos.X] = "_";
+                    mapData[currentMap][pos.Y] [pos.X-1] = "e";
+                }
+            }
+        }
+        else if(nomber == 4){
+            if(mapData[currentMap][pos.Y] [pos.X+1] == "_"){
+                if(isOnTrap)
+                {
+                    mapData[currentMap][pos.Y] [pos.X] = "s";
+                    mapData[currentMap][pos.Y] [pos.X+1] = "e";
+                    isOnTrap = false;
+                }
+                else
+                {
+                    mapData[currentMap][pos.Y] [pos.X] = "_";
+                    mapData[currentMap][pos.Y] [pos.X+1] = "e";
+                }
+            }
+        }
+    }
+    catch(err){
+
+    }
+    
+}
 
 printScreen();
