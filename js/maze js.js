@@ -1,12 +1,12 @@
 var mapData = { // All levels for the maze stored in arrays
     level1:[
-        ["_","_","_","_","1","_","_","_","_"],
-        ["_","_","_","_","s","_","_","_","_"],
-        ["_","s","_","_","_","_","_","_","_"],
-        ["_","s","_","_","2","_","_","s","_"],
-        ["_","_","_","_","_","_","_","e","_"],
-        ["_","_","_","_","c","_","_","_","_"],
-        ["_","_","_","_","_","_","_","_","_"]
+        ["x","_","_","_","1","_","_","_","_"],
+        ["_","_","x","x","x","x","_","_","_"],
+        ["_","s","_","_","_","_","_","x","x"],
+        ["_","s","x","x","_","x","x","s","x"],
+        ["_","_","_","_","_","_","x","_","_"],
+        ["_","x","x","x","c","_","x","x","_"],
+        ["_","_","2","x","x","_","_","_","_"]
     ],
     level2:[
         ["_","_","_","_","x","x","x","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
@@ -19,8 +19,6 @@ var mapData = { // All levels for the maze stored in arrays
         ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
         ["_","_","_","_","_","_","_","_","_","_","_","_","e","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
         ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","e","_","_","_","_","_"],
-        ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
-        ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
         ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
         ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
         ["_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
@@ -62,9 +60,10 @@ var mapData = { // All levels for the maze stored in arrays
 var currentMap = "level1";
 var level = 1;
 var isDead = false;
-var lives = 3;
+var lives = 10;
 var coins = 0;
 var isOnTrap = false;
+var enemyIsOnTrap = false;
 
 function printScreen() // Function that creates the table, sets ids to the <td> tags, and prints lives
 {
@@ -76,7 +75,7 @@ function printScreen() // Function that creates the table, sets ids to the <td> 
         {
             if(mapData[currentMap][y] [x] == "c")
             {
-                out += "<td id='char'>" + mapData[currentMap][y] [x] + "</td>";
+                out += "<td id='char'>" + "<img src='images/pika.png'>" + "</td>";
             }
             else if(mapData[currentMap][y] [x] == "x")
             {
@@ -84,7 +83,7 @@ function printScreen() // Function that creates the table, sets ids to the <td> 
             }
             else if(mapData[currentMap][y] [x] == "2")
             {
-                out += "<td class='coin'>" + "<img src='images/small coin.png'>" + "</td>";
+                out += "<td class='coin'>" + "<img src='images/shiny coin.png' width='60%' height='60%'>" + "</td>";
             }
             else if(mapData[currentMap][y] [x] == "s")
             {
@@ -418,7 +417,7 @@ function enemyAi(){
                 {
                     mapData[currentMap][pos.Y] [pos.X] = "s";
                     mapData[currentMap][pos.Y-1] [pos.X] = "e";
-                    isOnTrap = false;
+                    enemyIsOnTrap = false;
                 }
                 else
                 {
@@ -433,7 +432,7 @@ function enemyAi(){
                 {
                     mapData[currentMap][pos.Y] [pos.X] = "s";
                     mapData[currentMap][pos.Y+1] [pos.X] = "e";
-                    isOnTrap = false;
+                    enemyIsOnTrap = false;
                 }
                 else
                 {
@@ -448,7 +447,7 @@ function enemyAi(){
                 {
                     mapData[currentMap][pos.Y] [pos.X] = "s";
                     mapData[currentMap][pos.Y] [pos.X-1] = "e";
-                    isOnTrap = false;
+                    enemyIsOnTrap = false;
                 }
                 else
                 {
@@ -463,7 +462,7 @@ function enemyAi(){
                 {
                     mapData[currentMap][pos.Y] [pos.X] = "s";
                     mapData[currentMap][pos.Y] [pos.X+1] = "e";
-                    isOnTrap = false;
+                    enemyIsOnTrap = false;
                 }
                 else
                 {

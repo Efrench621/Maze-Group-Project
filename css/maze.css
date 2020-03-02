@@ -2,18 +2,13 @@
 body{
     text-align: center;
 }
-.block{
-    table-layout: auto;
-    padding: 20px;
-    text-align: center;
-    background-color: black;
-}
+
 
 td{
-    padding: 20px;
+    height: 50px;
+    width: 50px;
     background-color: burlywood;
 }
-
 
 table{     
     border-collapse: collapse;
@@ -21,6 +16,13 @@ table{
     border: darkblue 4px solid;
     margin: 20px;
 }
+
+.block{
+    table-layout: auto;
+    text-align: center;
+    background-color: black;
+}
+
 #lives{
     position: fixed;
     top: 20px;
