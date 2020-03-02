@@ -54,6 +54,9 @@ var mapData = { // All levels for the maze stored in arrays
         ["x","x","_","_","_","_","_","_","_","_"],
         ["x","c","_","_","_","_","_","_","_","_"],
         ["x","x","_","_","_","_","_","_","_","1"]
+    ],
+    level6:[
+        ["c"]
     ]
 }
 
@@ -147,7 +150,11 @@ function bone(input)
         isDead = true;
     }
     enemyAi();
-
+    if(level >= 6)
+    {
+        currentMap = "level1";
+        level = 1;
+    }
 }
 
 function getPos(input)
