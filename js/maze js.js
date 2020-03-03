@@ -80,6 +80,10 @@ function printScreen() // Function that creates the table, sets ids to the <td> 
             {
                 out += "<td class='block'>" + mapData[currentMap][y] [x] + "</td>";
             }
+            else if(mapData[currentMap][y] [x] == "1")
+            {
+                out += "<td>" + mapData[currentMap][y] [x] + "</td>";
+            }
             else if(mapData[currentMap][y] [x] == "2")
             {
                 out += "<td class='coin'>" + "<img src='images/shiny coin.png' width='60%' height='60%'>" + "</td>";
@@ -94,7 +98,7 @@ function printScreen() // Function that creates the table, sets ids to the <td> 
             }
             else
             {
-                out += "<td>" + mapData[currentMap][y] [x] + "</td>";
+                out += "<td></td>";
             }
         }
         out += "</tr>";
