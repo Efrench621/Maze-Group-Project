@@ -37,7 +37,6 @@ table{
     font-size: 200%;
     font-weight: bold;
     color: white;
-    border-radius: 20%;
     padding: 2%;
 }
 
@@ -50,6 +49,7 @@ table{
     left: 50vw;
 }
 #tim{
-    font-size: 140%;
+    font-size: 200%;
+    font-weight: bold;
     color: white;
 }
