@@ -478,7 +478,7 @@ function deathAnimation() {
     var id = setInterval(frame, 5);
     function frame()
     {
-        if (pos == 400) {
+        if (pos == 500) {
             clearInterval(id);
             AniFin = true;
         } else {
@@ -495,7 +495,7 @@ function winAnimation() {
     var id = setInterval(frame, 5);
     function frame()
     {
-        if (pos == 400) {
+        if (pos == 500) {
             clearInterval(id);
             AniFin = true;
         } else {
@@ -515,7 +515,7 @@ function startAnimation()
         var id = setInterval(frame, 5);
         function frame()
         {
-            if (pos == 400) {
+            if (pos == 500) {
                 clearInterval(id);
                 notStarted = false;
             } else {
