@@ -490,7 +490,7 @@ function deathAnimation() {
 
 function winAnimation() {
     var elem = document.getElementById("anime");
-    elem.innertext = "The stories of your victories will be told forever..." + "score:" + coins;
+    elem.innerText = "The stories of your victories will be told forever..." + "score:" + coins;
     var pos = -50;
     var id = setInterval(frame, 5);
     function frame()
