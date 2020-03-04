@@ -1,6 +1,8 @@
 /*comment*/
+
 body{
     text-align: center;
+    background-color:rgb(77, 77, 77);
 }
 
 
@@ -13,7 +15,7 @@ td{
 table{     
     border-collapse: collapse;
     border-spacing: 0px;
-    border: darkblue 4px solid;
+    border: black 4px solid;
     margin: 20px;
     position: fixed;
     top: 5vh;
@@ -32,6 +34,9 @@ table{
     right: 70vw;
     font-size: 200%;
     color: slateblue;
+    background-color:white;
+    border-radius: 20%;
+    border:slategray 3px solid;
 }
 
 #anime{
@@ -41,4 +46,7 @@ table{
     font-size: 20px;
     top: -50px;
     left: 50vw;
+}
+#tim{
+    font-size: 140%;
 }
