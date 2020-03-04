@@ -30,3 +30,12 @@ table{
     font-size: 200%;
     color: slateblue;
 }
+
+#anime{
+    position: fixed;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    top: -50px;
+    left: 50vw;
+}

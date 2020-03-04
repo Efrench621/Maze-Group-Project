@@ -9,47 +9,47 @@ var mapData = { // All levels for the maze stored in arrays
         ["_","_","2","x","x","_","_","_","_"]
     ],
     level2:[
-        ["_","_","_","_","x","c","x","_","_","_","_","_","_","_","_","_","_","_"],
-        ["_","x","x","2","x","_","x","_","_","_","_","_","_","_","_","_","_","_"],
-        ["_","_","_","x","x","_","x","x","x","_","_","_","_","_","_","_","_","_"],
-        ["_","x","x","x","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
-        ["_","_","_","_","_","s","_","x","x","x","_","_","_","_","_","_","_","_"],
-        ["_","x","x","x","_","_","_","_","_","_","_","_","_","_","_","_","_","_"],
-        ["_","_","_","x","_","x","x","x","_","_","_","_","_","_","_","_","_","_"],
-        ["x","_","x","x","_","x","x","x","x","_","_","_","_","_","_","_","_","_"],
-        ["x","_","x","_","_","_","_","_","x","x","x","_","e","_","x","x","x","_"],
+        ["2","_","_","_","x","c","x","_","_","x","_","_","_","x","2","x","_","_"],
+        ["_","x","x","2","x","_","x","x","_","_","_","x","_","x","_","_","_","x"],
+        ["_","_","_","x","x","_","x","x","x","_","x","x","_","x","_","x","x","_"],
+        ["_","x","x","x","_","_","_","_","_","_","_","x","_","_","_","x","_","_"],
+        ["_","_","_","_","_","s","_","x","x","x","_","x","_","x","_","_","_","x"],
+        ["_","x","x","x","_","_","_","_","_","_","_","x","_","_","_","x","x","_"],
+        ["_","_","_","x","_","x","x","x","_","_","_","x","_","x","_","_","_","_"],
+        ["x","_","x","x","_","x","x","x","x","_","_","_","x","_","_","_","_","x"],
+        ["x","_","x","_","_","_","_","_","x","x","x","_","e","_","x","x","_","_"],
         ["x","_","_","_","_","_","x","_","_","_","x","_","x","_","_","_","x","_"],
-        ["x","x","x","_","_","e","x","x","x","_","_","_","x","x","x","s","s","1"]
+        ["x","x","x","_","_","x","x","x","x","_","_","_","x","x","x","s","s","1"]
     ],
     level3:[
-        ["_","_","x","_","x","x","x","_","_","_"],
+        ["_","2","x","_","x","x","x","x","2","x"],
         ["_","x","x","_","x","c","x","_","_","_"],
-        ["_","_","_","_","x","_","x","_","_","_"],
-        ["_","x","x","_","_","_","_","_","_","_"],
-        ["e","_","x","_","x","_","_","_","_","_"],
-        ["x","x","_","x","_","_","_","_","_","_"],
-        ["x","_","_","_","_","_","_","_","_","_"],
-        ["x","x","_","_","_","_","_","_","_","1"]
+        ["_","_","_","_","x","_","x","_","x","_"],
+        ["_","x","x","_","_","_","_","_","_","x"],
+        ["_","_","x","_","x","e","x","x","_","_"],
+        ["x","x","_","x","x","_","x","_","x","x"],
+        ["x","2","_","x","x","_","_","_","x","_"],
+        ["x","x","_","_","_","_","x","_","_","1"]
     ],
     level4:[
-        ["_","_","_","_","x","x","x","_","_","_"],
+        ["_","_","_","_","x","x","x","2","x","_"],
         ["_","_","_","_","x","_","x","_","_","_"],
-        ["_","_","_","_","x","_","x","_","_","_"],
-        ["_","_","_","_","_","_","_","_","_","_"],
-        ["_","_","_","_","_","_","_","_","_","_"],
-        ["x","x","_","_","_","_","_","_","_","_"],
-        ["x","c","_","_","_","_","_","_","_","_"],
-        ["x","x","_","_","_","_","_","_","_","1"]
+        ["_","x","x","x","x","_","x","_","x","_"],
+        ["_","x","_","_","_","_","_","x","_","_"],
+        ["_","x","_","x","_","x","e","_","_","x"],
+        ["x","x","_","x","_","x","x","x","_","_"],
+        ["x","c","_","x","x","_","_","_","x","_"],
+        ["x","x","_","_","_","_","x","2","x","1"]
     ],
     level5:[
-        ["_","_","_","_","x","x","x","_","_","_"],
-        ["_","_","_","_","x","_","x","_","_","_"],
-        ["_","_","_","_","x","_","x","_","_","_"],
-        ["_","_","_","_","_","_","_","_","_","_"],
-        ["_","_","_","_","_","_","_","_","_","_"],
-        ["x","x","_","_","_","_","_","_","_","_"],
-        ["x","c","_","_","_","_","_","_","_","_"],
-        ["x","x","_","_","_","_","_","_","_","1"]
+        ["2","x","x","_","_","_","x","_","_","_"],
+        ["_","_","_","_","x","_","x","_","x","_"],
+        ["e","x","x","_","x","_","x","_","x","_"],
+        ["_","_","_","x","x","_","x","_","x","_"],
+        ["x","x","_","_","x","_","x","_","x","_"],
+        ["_","c","x","_","x","_","x","_","x","_"],
+        ["_","x","x","_","x","_","x","_","x","_"],
+        ["_","_","_","_","x","_","_","_","x","1"]
     ],
     level6:[
         ["c"]
@@ -59,10 +59,12 @@ var mapData = { // All levels for the maze stored in arrays
 var currentMap = "level1";
 var level = 1;
 var isDead = false;
-var lives = 10;
+var lives = 3;
 var coins = 0;
 var isOnTrap = false;
 var enemyIsOnTrap = false;
+var AniFin = false;
+var notStarted = true;
 
 function printScreen() // Function that creates the table, sets ids to the <td> tags, and prints lives
 {
@@ -78,11 +80,11 @@ function printScreen() // Function that creates the table, sets ids to the <td> 
             }
             else if(mapData[currentMap][y] [x] == "x")
             {
-                out += "<td class='block'>" + mapData[currentMap][y] [x] + "</td>";
+                out += "<td class='block'></td>";
             }
             else if(mapData[currentMap][y] [x] == "1")
             {
-                out += "<td>" + mapData[currentMap][y] [x] + "</td>";
+                out += "<td>" + "<img src='images/gate.png' width='60%' height='60%'>" + "</td>";
             }
             else if(mapData[currentMap][y] [x] == "2")
             {
@@ -90,7 +92,7 @@ function printScreen() // Function that creates the table, sets ids to the <td> 
             }
             else if(mapData[currentMap][y] [x] == "s")
             {
-                out += "<td class='station'>" + mapData[currentMap][y] [x] + "</td>";
+                out += "<td class='station'>" + "<img src='images/ven.png' width='60%' height='60%'>" + "</td>";
             }
             else if(mapData[currentMap][y] [x] == "e")
             {
@@ -109,7 +111,15 @@ function printScreen() // Function that creates the table, sets ids to the <td> 
     document.getElementById("lives").innerHTML = stats;
 }
 
-
+function sleep(milliseconds) 
+{
+    const date = Date.now();
+    let currentDate = null;
+    do {
+        currentDate = Date.now();
+        console.log(Date.now());
+    } while (currentDate - date < milliseconds);
+}
 
 function specificKey(event) // Checks if key is pressed
 {
@@ -117,43 +127,53 @@ function specificKey(event) // Checks if key is pressed
     return keyPressed;
 }
 
-function resetMapFunc()
+function death()
 {
-    location.reload();
+    deathAnimation();
+    if(AniFin)
+    {
+        location.reload();
+    }
 }
 
 function bone(input)
 {
+    if(notStarted)
+    {
+        startAnimation();
+        return(true);
+    }
+    document.getElementById("anime").style.top = -50 + "px";
     //movement
-    if(input=="w"||input=="W")
+    if(input == "w" && isDead == false)
     {
         moveUp();
     }
-    else if(input=="a"||input=="A")
+    else if(input == "a" && isDead == false)
     {
         moveLeft();
     }
-    else if(input=="s"||input=="S")
+    else if(input == "s" && isDead == false)
     {
         moveDown();
     }
-    else if(input=="d"||input=="D")
+    else if(input == "d" && isDead == false)
     {
         moveRight();
-    }
-    if(isDead)
-    {
-        resetMapFunc();
     }
     if (lives<=0)
     {
         isDead = true;
+        death();
     }
     enemyAi();
     if(level >= 6)
     {
-        currentMap = "level1";
-        level = 1;
+        winAnimation();
+        if(AniFin)
+        {
+            location.reload();
+        }
     }
 }
 
@@ -411,71 +431,37 @@ function rand(min,max){
     }
 }
 
-
-
 function enemyAi(){
     var pos = getPos("e");
     var nomber = Math.round(rand(0,5));
     try
     {    
         if(nomber == 1){
-            if(mapData[currentMap][pos.Y-1] [pos.X] == "_"){
-                if(isOnTrap)
-                {
-                    mapData[currentMap][pos.Y] [pos.X] = "s";
-                    mapData[currentMap][pos.Y-1] [pos.X] = "e";
-                    enemyIsOnTrap = false;
-                }
-                else
-                {
-                    mapData[currentMap][pos.Y] [pos.X] = "_";
-                    mapData[currentMap][pos.Y-1] [pos.X] = "e";
-                }
+            if(mapData[currentMap][pos.Y-1] [pos.X] == "_")
+            {
+                mapData[currentMap][pos.Y] [pos.X] = "_";
+                mapData[currentMap][pos.Y-1] [pos.X] = "e";
             }
         }
         else if(nomber == 2){
-            if(mapData[currentMap][pos.Y+1] [pos.X] == "_"){
-                if(isOnTrap)
-                {
-                    mapData[currentMap][pos.Y] [pos.X] = "s";
-                    mapData[currentMap][pos.Y+1] [pos.X] = "e";
-                    enemyIsOnTrap = false;
-                }
-                else
-                {
-                    mapData[currentMap][pos.Y] [pos.X] = "_";
-                    mapData[currentMap][pos.Y+1] [pos.X] = "e";
-                }
+            if(mapData[currentMap][pos.Y+1] [pos.X] == "_")
+            {
+                mapData[currentMap][pos.Y] [pos.X] = "_";
+                mapData[currentMap][pos.Y+1] [pos.X] = "e";
             }
         }
         else if(nomber == 3){
-            if(mapData[currentMap][pos.Y] [pos.X-1] == "_"){
-                if(isOnTrap)
-                {
-                    mapData[currentMap][pos.Y] [pos.X] = "s";
-                    mapData[currentMap][pos.Y] [pos.X-1] = "e";
-                    enemyIsOnTrap = false;
-                }
-                else
-                {
-                    mapData[currentMap][pos.Y] [pos.X] = "_";
-                    mapData[currentMap][pos.Y] [pos.X-1] = "e";
-                }
+            if(mapData[currentMap][pos.Y] [pos.X-1] == "_")
+            {
+                mapData[currentMap][pos.Y] [pos.X] = "_";
+                mapData[currentMap][pos.Y] [pos.X-1] = "e";
             }
         }
         else if(nomber == 4){
-            if(mapData[currentMap][pos.Y] [pos.X+1] == "_"){
-                if(isOnTrap)
-                {
-                    mapData[currentMap][pos.Y] [pos.X] = "s";
-                    mapData[currentMap][pos.Y] [pos.X+1] = "e";
-                    enemyIsOnTrap = false;
-                }
-                else
-                {
-                    mapData[currentMap][pos.Y] [pos.X] = "_";
-                    mapData[currentMap][pos.Y] [pos.X+1] = "e";
-                }
+            if(mapData[currentMap][pos.Y] [pos.X+1] == "_")
+            {
+                mapData[currentMap][pos.Y] [pos.X] = "_";
+                mapData[currentMap][pos.Y] [pos.X+1] = "e";
             }
         }
     }
@@ -483,6 +469,61 @@ function enemyAi(){
 
     }
     
+}
+
+function deathAnimation() {
+    var elem = document.getElementById("anime");
+    elem.innerText = "The story of you ended with a terrible scream...";
+    var pos = -50;
+    var id = setInterval(frame, 5);
+    function frame()
+    {
+        if (pos == 400) {
+            clearInterval(id);
+            AniFin = true;
+        } else {
+            pos++; 
+            elem.style.top = pos + "px"; 
+        }
+    }
+}
+
+function winAnimation() {
+    var elem = document.getElementById("anime");
+    elem.innertext = "The stories of your victories will be told forever..." + "score:" + coins;
+    var pos = -50;
+    var id = setInterval(frame, 5);
+    function frame()
+    {
+        if (pos == 400) {
+            clearInterval(id);
+            AniFin = true;
+        } else {
+            pos++; 
+            elem.style.top = pos + "px"; 
+        }
+    }
+}
+
+function startAnimation()
+{
+    var elem = document.getElementById("anime");
+    if(notStarted)
+    {
+        elem.innerText = "you start your adventure to save the world";
+        var pos = -50;
+        var id = setInterval(frame, 5);
+        function frame()
+        {
+            if (pos == 400) {
+                clearInterval(id);
+                notStarted = false;
+            } else {
+                pos++; 
+                elem.style.top = pos + "px"; 
+            }
+        }
+    }
 }
 
 printScreen();
