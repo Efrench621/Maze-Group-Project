@@ -2,7 +2,7 @@
 
 body{
     text-align: center;
-    background-color:rgb(77, 77, 77);
+    background-color:black;
 }
 
 
@@ -33,15 +33,17 @@ table{
     top: 10vh;
     right: 70vw;
     font-size: 200%;
-    color: slateblue;
-    background-color:white;
+    font-weight: bold;
+    color: white;
+
     border-radius: 20%;
-    border:slategray 3px solid;
+    /* border:white 3px solid; */
+    padding: 2%;
 }
 
 #anime{
     position: fixed;
-    background-color: black;
+
     color: white;
     font-size: 20px;
     top: -50px;
@@ -49,4 +51,5 @@ table{
 }
 #tim{
     font-size: 140%;
+    color: white;
 }
