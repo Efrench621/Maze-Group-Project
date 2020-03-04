@@ -16,8 +16,8 @@ table{
     border: darkblue 4px solid;
     margin: 20px;
     position: fixed;
-    top: 50px;
-    left: 40vw;
+    top: 5vh;
+    left: 30vw;
 }
 
 .block{
@@ -28,8 +28,8 @@ table{
 
 #lives{
     position: fixed;
-    top: 20px;
-    right: 60vw;
+    top: 10vh;
+    right: 70vw;
     font-size: 200%;
     color: slateblue;
 }

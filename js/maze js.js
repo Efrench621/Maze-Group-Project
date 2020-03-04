@@ -526,4 +526,25 @@ function startAnimation()
     }
 }
 
+function timer()
+{
+    var elem = document.getElementById("tim");
+    if(notStarted)
+    {
+        elem.innerText = "you start your adventure to save the world";
+        var pos = 0;
+        var id = setInterval(frame, 1000);
+        function frame()
+        {
+            if (pos == 300) {
+                clearInterval(id);
+                location.reload();
+            } else {
+                pos++; 
+                elem.innerHTML = pos + ":seconds"; 
+            }
+        }
+    }
+}
+timer();
 printScreen();
