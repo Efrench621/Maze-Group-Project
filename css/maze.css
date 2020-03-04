@@ -10,6 +10,7 @@ td{
     height: 50px;
     width: 50px;
     background-color: white;
+    background-color: burlywood;
 }
 
 table{     
@@ -20,6 +21,7 @@ table{
     position: fixed;
     top: 5vh;
     left: 30vw;
+    
 }
 
 .block{
@@ -35,9 +37,7 @@ table{
     font-size: 200%;
     font-weight: bold;
     color: white;
-
     border-radius: 20%;
-    /* border:white 3px solid; */
     padding: 2%;
 }
 
